@@ -1,0 +1,121 @@
+Java BootcampAugust/September2024
+
+Emails: 
+Baltics.Bootcamp@accenture.com
+m.osite@accenture.com
+
+Day 1 Install IntelliJ & do tutorials
+
+Day 2 GIT Fundamentals, Brancing and Merging
+
+Going through the Udemy course about git (Free): https://www.udemy.com/course/git-essentials-mini-course/ 
+
+Also, there is an excellent resource for practising Git commands in a gamified way: https://learngitbranching.js.org/
+
+
+Java activities folder
+
+Module 3 activities - done
+
+Day 3
+
+
+
+Module 4 activities - done
+Module 5 activities - done
+Module 6 activities - done
+Module 7 activities - done
+
+Banking project: 
+https://github.com/anjaneew/Banking/tree/main
+
+Create a .gitignore file ? 
+(https://git-scm.com/docs/gitignore )   
+
+Coding Games:
+https://www.codingame.com/
+
+
+Day 4
+
+Additionally to PDFs, there are  a few good resources to go through additionally:
+
+Visual tools: https://visualgo.net/en/list  ;   https://visualgo.net/en/sorting
+Exercises: https://www.w3resource.com/java-exercises/collection/index.php
+Performance cheat-sheet material: https://www.bigocheatsheet.com/ 
+
+---------------------
+
++ improve Banking code with adding the data structures
+and
++ Input/Output, e.g. if yesterday didn't use Input from user then today please add interaction and add output, like report of accounts in .txt (or .CSV) file.
+
+
+
+Day 5
+
+Unit testing:
+
+For start have a look to this video: https://www.youtube.com/watch?v=we3zJE3hlWE
+
+Second step is to follow tutorial: https://www.jetbrains.com/help/idea/junit.html 
+
+Third step is to start apply knowledge and add the JUnit tests to your Banking project
+
+
+Spring Boot (we will continue with it also in upcoming days):
+
+https://www.baeldung.com/spring-boot-start
+
+https://www.youtube.com/watch?v=9SGDpanrc8U
+
+
+https://spring.io/guides/gs/consuming-rest/
+
+https://spring.io/guides/gs/rest-service/
+
+
+Day 6
+
+Logging materials:
+
+https://www.baeldung.com/java-logging-intro
+
+https://betterstack.com/community/guides/logging/how-to-start-logging-with-log4j/
+
+https://logging.apache.org/log4j/2.x/
+
+https://logging.apache.org/log4j/2.x/maven-artifacts.html
+
+
+Day 7 
+
+Databases
+
+https://www.sqlitetutorial.net/ - tutorial to start with
+
+https://sqlitebrowser.org/dl/ - DB Browser visual
+
+https://www.w3schools.com/sql/exercise.asp?filename=exercise_select1  - optional practice
+
+https://sqlpd.com/ - optional gamified way of learning
+
+https://joins.spathon.com/ - optional material to understand joins better
+
+Day 8 
+
+OPTIONAL
+
+GUI Framework and Android development
+
+OPTIONAL: Here is a tutorial of Java FX 
+https://www.youtube.com/playlist?list=PLZPZq0r_RZOM-8vJA3NQFZB7JroDcMwev 
+
+Here is a link to the Android setup: 
+https://developer.android.com/studio. 
+
+And here is the tutorial for Android development: 
+
+https://developer.android.com/training/basics/firstapp
+
+@everyone interested in those topics! 🙂

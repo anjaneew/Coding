@@ -1,0 +1,78 @@
+Here’s a summary of the main steps to add logging to your Java code:
+
+1. Add Log4j Dependencies:
+
+Open pom.xml and add Log4j dependencies:
+
+Copy code
+-------------------------------------------------------------
+<dependencies>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>2.23.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.23.1</version>
+    </dependency>
+</dependencies>
+-------------------------------------------------------------
+Save pom.xml and refresh Maven projects in IntelliJ.
+
+
+2.Create log4j2.xml Configuration File:
+
+Place log4j2.xml in src/main/resources with your desired configuration, e.g.:
+
+Copy code
+-------------------------------------------------------------
+
+<Configuration status="WARN">
+    <Appenders>
+        <File name="FileAppender" fileName="app.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.example.Bank" level="trace" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
+-------------------------------------------------------------
+
+3. Import Log4j Classes in Your Java Files:
+
+Add imports in your Java classes:
+
+Copy code
+-------------------------------------------------------------
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+Initialize Logger and Add Logging Statements:
+-------------------------------------------------------------
+
+4. Define a Logger instance and use it in your methods:
+
+Copy code
+-------------------------------------------------------------
+
+private static final Logger logger = LogManager.getLogger(Bank.class);
+
+public double checkBalance(String accountId) {
+    Account account = accounts.get(accountId);
+    if (account != null) {
+        return account.getBalance();
+    }
+    logger.error("Account not found: " + accountId);
+    return 0.0;
+}
+-------------------------------------------------------------
+
+Follow these steps to integrate logging into your Java application effectively.

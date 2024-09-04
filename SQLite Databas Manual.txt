@@ -7,33 +7,23 @@ $ Download and Install IntelliJ IDEA
 Create a New Project: 
 
 $ Open IntelliJ IDEA and click on "Create New Project".
-
 $ Project Name: Enter a name for your project. 
-
 $ Language: Select Java. 
-
 $ Build System: Select Maven (This is essential for managing SQL database dependencies). 
-
 $ JDK Selection: If no JDK is listed, click on "ADD SDK" to download and select the latest version. If you already have a JDK installed, select it from the list. 
-
 $ Click on "Create" and wait for the project to load completely.
 
 Step 2: Add SQLite JDBC Dependency
 
 $ Open the pom.xml File: 
-
 $ Once your project has loaded, navigate to and open the pom.xml file.
 
 Add JDBC Dependency: 
 
 $ Inside the pom.xml file, locate the <dependencies> tag.
- 
 $ Search for the SQLite JDBC driver online or follow the provided link in the video description to find it on Maven Repository. 
-
 $ Copy the dependency snippet from Maven (e.g., <dependency>...</dependency>) and paste it within the <dependencies> tag in pom.xml. 
-
 $ Save the file, and IntelliJ IDEA will prompt you to reload Maven changes. Click on "Reload Maven Changes" or use the shortcut Ctrl+Shift+O. 
-
 $ Wait for the dependencies to load completely.
 
 Step 3: Create and Connect to the Database
@@ -41,9 +31,7 @@ Step 3: Create and Connect to the Database
 Create the Database File: 
 
 $ Right-click on the project name in the Project Explorer. 
-
 $ Select New > File. 
-
 $ Name the file (e.g., mydb.db). Ensure the file name ends with the .db extension, as this is the standard extension for SQLite databases.
 
 Install the Database Plugin: 
@@ -53,13 +41,9 @@ $ IntelliJ IDEA may recommend installing a plugin to browse the database. Accept
 Connect the Database:
  
 $ In the right panel, click on the Database tab.
- 
 $ Click on the "+" icon to add a new database. 
-
 $ Select "Data Source from Path" and navigate to the .db file you created. 
-
 $ Choose SQLite as the driver and click on "OK". 
-
 $ Test the connection, and if successful, click "OK" to complete the setup.
 
 Step 4: Create a Java Class to Connect to the Database
@@ -75,13 +59,9 @@ $ Inside the models package, create a new Java class named ConnectDB.
 Implement the following: 
 
 $ Specify the package name at the top. 
-
 $ Import necessary SQL classes. 
-
 $ Create a method connectDB() to establish a connection using DriverManager.getConnection(). 
-
 $ Handle connection errors with appropriate error messages. 
-
 $ Provide methods to close the connection and handle other related tasks.
 
 models/ConnectDB.java
@@ -89,71 +69,40 @@ models/ConnectDB.java
 package org.example.models;
 
 // Uncomment line 3 to import all classes from java.sql.* for database operations.
-
 //import java.sql.*;
-
 // Alternatively, import only the necessary classes.
 
 import java.sql.Connection;
-
 import java.sql.DriverManager;
-
 import java.sql.SQLException;
 
-
 public class ConnectDB {
-
     private Connection connection;
-
-
     public ConnectDB() {
-
         String url = “jdbc:sqlite:mydb.db”; // Specify your database URL
-
         try {
-
             connection = DriverManager.getConnection(url);
-
             System.out.println(“Connection Successful”);
-
         } catch (SQLException e) {
-
             System.out.println(“Error Connecting to Database”);
-
             e.printStackTrace();
-
         }
-
     }
-
 
     public Connection getConnection() {
-
         return connection;
-
     }
-
 
     public void closeConnection() {
-
         try {
-
             if (connection != null) {
-
                 System.out.println(“Connection Closed”);
-
                 connection.close();
-
             }
-
         } catch (SQLException e) {
-
             e.printStackTrace();
-
         }
-
     }
-
 }
 
 
@@ -187,119 +136,71 @@ Main.java
 package org.example;
 
 import org.example.models.ConnectDB;
-
-
 import java.sql.*;
 
-
 public class Main {
-
     public static void main(String[] args) {
-
         ConnectDB db = new ConnectDB();
-
         Connection connection = db.getConnection();
 
-
         if (connection != null) {
-
             try {
-
                 Statement statement = connection.createStatement();
-
                 String createTable=“CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT)”;
-
                 // Create table if not exists
-
 //                Operation:C
-
                 statement.executeUpdate(createTable);
 
-
                 // Insert data
-
                 statement.executeUpdate(“INSERT INTO students (name) VALUES (‘John’)”);
-
                 statement.executeUpdate(“INSERT INTO students (name) VALUES (‘Alice’)”);
-
                 System.out.println(“Data Inserted”);
 
-
 //                Operation:R
-
                 // Display data
 
                 ResultSet resultSet = statement.executeQuery(“SELECT * FROM students”);
-
                 System.out.println(“ID\tName”);
-
                 while (resultSet.next()) {
-
                     int id = resultSet.getInt(“id”);
-
                     String name = resultSet.getString(“name”);
-
                     System.out.println(id + “\t“ + name);
-
                 }
 
 
 //                Operation:U
-
                 // Update data
-
                 statement.executeUpdate(“UPDATE students SET name = ‘Johnny’ WHERE id = 1”);
-
                 System.out.println(“Data Updated”);
 
                 // Display updated data
-
                 resultSet = statement.executeQuery(“SELECT * FROM students”);
 
                 System.out.println(“ID\tName”);
-
                 while (resultSet.next()) {
-
                     int id = resultSet.getInt(“id”);
-
                     String name = resultSet.getString(“name”);
-
                     System.out.println(id + “\t“ + name);
-
                 }
 
 
 //                Operation:D
-
 //                 Delete data
-
                 statement.executeUpdate(“DELETE FROM students WHERE id = 2”);
 
-
                 // Close resources
-
                 resultSet.close();
-
                 statement.close();
-
             } catch (SQLException e) {
-
                 e.printStackTrace();
-
             } finally {
-
                 db.closeConnection();
-
             }
 
         } else {
-
             System.out.println(“Connection failed.”);
-
         }
-
     }
-
 }
 
 --------------------------------------------------------------

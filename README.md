@@ -1,2 +1,14 @@
 # Coding
 This is where I will store my useful manuals for safekeep
+
+
+Txt Files:
+* Java BootcampAugust September2024.txt
+* Logging main steps.txt
+* SQLite Database Manual
+
+
+Data Structures & Algorithms:
+1. Stack
+2. Queue
+3. 

@@ -7,11 +7,14 @@ public class StackDS {
     public static void main(String[] args) {
 
         // *****************************************************
-
+        // ------------------stack------------------
         // stack = LIFO data structure. Last-In First-Out
         //               stores objects into a sort of "vertical tower"
         //		  push() to add objects to the top
         //		  pop() to remove objects from the top
+        //        peek()
+        //        empty()
+        //        search()
 
         // uses of stacks?
         // 1. undo/redo features in text editors

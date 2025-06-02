@@ -8,13 +8,16 @@ public class QueueDS {
     public static void main(String[] args) {
 
         // *****************************************************
-
+        //-------------Queue-----------------------------
         // Queue = FIFO data structure. First-In First-Out
         //		   A collection designed for holding elements prior to processing
         //		   Linear data structure
 
         //         enqueue = offer()
         //         dequeue = poll()
+
+        //Queue is an interface so cannot be used directly.
+        // Need to use linkedList or priority Ques which it implements.
 
         // Where are queues useful?
 
@@ -25,6 +28,8 @@ public class QueueDS {
         // *****************************************************
 
         Queue<String> queue = new LinkedList<String>();
+
+
 
         queue.offer("Karen");
         queue.offer("Chad");

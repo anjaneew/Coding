@@ -1,0 +1,18 @@
+First create a git repository. then on terminal
+
+git init
+git status
+git add .
+git commit -m "initial commit"
+git remote add origin URL_HERE
+git branch -M main 
+git push -u origin main
+
+
+When updating (I am in the correct branch now)
+
+git status
+git add .
+git commit -m "update details"
+git push -u origin main
+git status

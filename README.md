@@ -11,4 +11,5 @@ Txt Files:
 Data Structures & Algorithms:
 1. Stack
 2. Queue
-3. 
+3. Priority Que
+4. Linked Lists

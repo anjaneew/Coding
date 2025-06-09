@@ -6,6 +6,7 @@ Txt Files:
 * Java BootcampAugust September2024.txt
 * Logging main steps.txt
 * SQLite Database Manual
+* git commands
 
 
 Data Structures & Algorithms:

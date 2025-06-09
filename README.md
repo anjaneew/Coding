@@ -13,3 +13,4 @@ Data Structures & Algorithms:
 2. Queue
 3. Priority Que
 4. Linked Lists
+5. Dynamic Array

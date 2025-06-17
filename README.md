@@ -15,3 +15,8 @@ Data Structures & Algorithms:
 3. Priority Que
 4. Linked Lists
 5. Dynamic Array
+
+
+Search Algorithms: 
+1. Linear Search algorithm
+2. Binary Search algorithm

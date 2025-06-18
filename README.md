@@ -20,3 +20,4 @@ Data Structures & Algorithms:
 Search Algorithms: 
 1. Linear Search algorithm
 2. Binary Search algorithm
+3. Interpolation Search algorithm

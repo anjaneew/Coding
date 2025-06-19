@@ -1,3 +1,5 @@
+package datastructures_algorithms;
+
 public class SwapVariables {
 
     public static void main(String[] args){

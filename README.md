@@ -15,9 +15,13 @@ Data Structures & Algorithms:
 3. Priority Que
 4. Linked Lists
 5. Dynamic Array
+6. Swap Variables
 
 
 Search Algorithms: 
 1. Linear Search algorithm
 2. Binary Search algorithm
 3. Interpolation Search algorithm
+
+Sorting Algorithms:
+1. Bubble Sort Algorithm

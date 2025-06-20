@@ -25,3 +25,4 @@ Search Algorithms:
 
 Sorting Algorithms:
 1. Bubble Sort Algorithm
+2. Selection Sort Algorithm

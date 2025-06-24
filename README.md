@@ -1,7 +1,6 @@
 # Coding
 This is where I will store my useful manuals for safekeep
 
-
 Txt Files:
 * Java BootcampAugust September2024.txt
 * Logging main steps.txt
@@ -14,9 +13,11 @@ Data Structures & Algorithms:
 2. Queue
 3. Priority Que
 4. Linked Lists
-5. Dynamic Array
-6. Swap Variables
-
+5. Linked Lists Vs Array Lists
+6. Dynamic Array
+7. Swap Variables
+8. Recursion
+9. Hashtable
 
 Search Algorithms: 
 1. Linear Search algorithm
@@ -26,3 +27,6 @@ Search Algorithms:
 Sorting Algorithms:
 1. Bubble Sort Algorithm
 2. Selection Sort Algorithm
+3. Insertion Sort Algorithm
+4. Merge Sort Algorithm
+5. Quick Sort Algorithm

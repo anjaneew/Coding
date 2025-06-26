@@ -1,0 +1,7 @@
+Operator Presidence
+
+PEMDAS (in symbols):
+P → ( )
+E → ^ (in JS it is 4 ** 2  = 4^2 = four to the power of two)
+MD → × ÷ (left to right)
+AS → + − (left to right)

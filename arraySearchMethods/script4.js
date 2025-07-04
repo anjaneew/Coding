@@ -104,23 +104,19 @@ const clearInputs = () => {
 
 //search methods
 
-//Method 3 -for...of Loop (works everywhere)
+//Method 4 Array.findIndex() + Array Access
 const search = () => {
-    let editStudent; 
-    for(const oneStudent of students){
-        if(oneStudent.name === searchInput.value.trim()){
-            editStudent = oneStudent;
-    }
-    if(editStudent){
-        console.log(editStudent.id);
-        resultsContainer.innerHTML = `<h3> METHOD: for...of Loop (classic works everywhere)</h3> <br>
-        <strong> Data: </strong>  Student ID: ${editStudent.id} Name: ${editStudent.name} ✔️`;
-    }   
+    const index = students.findIndex(oneStudent => oneStudent.name === searchInput.value.trim()); 
+    if(index !== -1){
+        console.log(students[index].id);
+        resultsContainer.innerHTML = `<h3> METHOD: Array.findIndex() + Array Access </h3> <br>
+        <strong> Data: </strong>  Student ID: ${students[index].id} Name: ${students[index].name} ✔️`;
+    }  
     else{
         console.log("not found");
         resultsContainer.innerHTML = `not found 🙅‍♂️🙅‍♀️🙅`;
     }  
-}};
+};
 
 
 //Event Listeners

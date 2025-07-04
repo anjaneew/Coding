@@ -69,6 +69,7 @@ const choose = () => {
             notes.innerHTML = `
                 <h1>Array.reduce()</h1>
                 <img  src="images/6.png" alt="array method">
+                <img  src="images/7.png" alt="array method">
             `;
             break; 
         default:                   

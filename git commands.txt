@@ -16,3 +16,20 @@ git add .
 git commit -m "update details"
 git push -u origin main
 git status
+
+Working as a collaborator from another persons git repo
+
+git clone <repo-url>
+cd <repo-folder>
+git checkout -b <your-branch-name>
+# make your changes
+git add .
+git commit -m "your message"
+git push origin <your-branch-name>
+# then go to GitHub and create a pull request 
+
+pull request
+
+After pushing, go to the repo on GitHub → 
+you’ll see a “Compare & pull request” button → 
+click it → review → click “Create pull request.”

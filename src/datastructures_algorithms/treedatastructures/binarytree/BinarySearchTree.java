@@ -86,8 +86,8 @@ public class BinarySearchTree {
             root.right = removeHelper(root.right, data);
         }
         else{
-            //node found
-            if(root.left == null && root.right == null){ //is the dat a leaf node?
+            //node found - data == root.data
+            if(root.left == null && root.right == null){ //is the data leaf node?
                 root = null; //great simple. we just remove
             }
             //otherwise, we need to connect the child nodes of the subtree to the main tree
@@ -107,6 +107,15 @@ public class BinarySearchTree {
 
     private int successor(Node root) {
         //find least value below the right child of this root node
+
+//  ex: removing 3
+//      Initial Subtree  >  Step 1:               Step 2           >   Step 3         >  Step 4
+//       3                 At node 3              4 has no left       Replace 3 with 4   Delete original 4
+//      / \                → right child exists   → successor = 4        4               (right child)
+//     2   4               → go right                                   / \                4
+//                                                                     2   4              /
+//                                                                                       2
+
         root = root.right;
         while(root.left != null){
             root = root.left;

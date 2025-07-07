@@ -1,4 +1,4 @@
-package datastructures_algorithms.tree_data_structures.breadthfirstsearch;
+package datastructures_algorithms.treedatastructures.breadthfirstsearch;
 
 public class BreadthFirstSearch {
 

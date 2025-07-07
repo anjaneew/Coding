@@ -1,4 +1,4 @@
-package datastructures_algorithms.tree_data_structures.depth_first_search;
+package datastructures_algorithms.tree_data_structures.depthfirstsearch;
 
 public class DepthFirstSearch {
 

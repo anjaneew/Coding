@@ -1,4 +1,4 @@
-package datastructures_algorithms.DynmicArray;
+package datastructures_algorithms.dynmicarray;
 
 public class DynamicArray {
 

@@ -11,20 +11,20 @@ public class BinarySearchTree {
 
     private Node insertHelper(Node root, Node node){
 
-        int data = node.data;
+        int data = node.data;//get the node given to u
 
-        if(root == null){
-            root = node;
-            return root;
+        if(root == null){//check if the root node is assigned or not
+            root = node;// cool, vacancy. go ahead
+            return root;//this is the root. done
         }
-        else if(data < root.data){
+        else if(data < root.data){//root is not vacant so now check it goes left
             root.left = insertHelper(root.left, node);
         }
-        else{
+        else{ //root is not vacant and the number is higher so now it goes right
             root.right = insertHelper(root.right, node);
         }
 
-        return root;
+        return root;//this is the root. all done
     }
 
     public void display(){
@@ -32,8 +32,14 @@ public class BinarySearchTree {
     }
 
     private void displayHelper(Node root){
+
+        //in order traversal - ascending order / non-decreasing order
+        //                      a method of visiting all the nodes
+        //                      in a binary tree in a specific order:
+        //                      left subtree, then the current node, and finally the right subtree
+
         if(root != null){
-            displayHelper(root.left);
+            displayHelper(root.left);//rootchild's left node
             System.out.println(root.data);
             displayHelper(root.right);
         }
@@ -44,31 +50,34 @@ public class BinarySearchTree {
     }
 
     private boolean searchHelper(Node root, int data){
-        if(root == null){
+        if(root == null){//if the tree is empty
             return false;
         }
         else if(root.data == data){
-            return searchHelper(root.left, data);
+            return true; //found a match
+        }
+        else if(root.data > data){
+            return searchHelper(root.left, data); //check the less numbers
         }
         else{
-            return searchHelper(root.right, data);
+            return searchHelper(root.right, data); //check the more side
         }
     }
 
     public void remove(int data){
 
-        if(search(data)){
+        if(search(data)){//if the data even exist to remove in the first place
             removeHelper(root,data);
         }
         else{
-            System.out.println(data + " could not be found.");
+            System.out.println(data + " could not be found.");//data is not found
         }
     }
 
     private Node removeHelper(Node root, int data) {
 
         if(root == null){
-            return root;
+            return root;//if match is not there, end search
         }
         else if(data < root.data){
             root.left = removeHelper(root.left, data);
@@ -78,10 +87,40 @@ public class BinarySearchTree {
         }
         else{
             //node found
-            if(root.left == null && root.right == null){
-                root = null;
+            if(root.left == null && root.right == null){ //is the dat a leaf node?
+                root = null; //great simple. we just remove
+            }
+            //otherwise, we need to connect the child nodes of the subtree to the main tree
+            else if(root.right != null){
+                //find a successor to replace this node
+                root.data = successor(root);
+                root.right = removeHelper(root.right, root.data);
+            }
+            else{
+                //find a predecessor to replace this node
+                root.data = predecessor(root);
+                root.left = removeHelper(root.left, root.data);
             }
         }
+        return root;
+    }
+
+    private int successor(Node root) {
+        //find least value below the right child of this root node
+        root = root.right;
+        while(root.left != null){
+            root = root.left;
+        }
+        return root.data;
+    }
+
+    private int predecessor(Node root) {
+        //find greatest value below the left child of this root node
+        root = root.left;
+        while(root.right != null){
+            root = root.right;
+        }
+        return root.data;
     }
 
 

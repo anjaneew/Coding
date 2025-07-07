@@ -1,4 +1,4 @@
-package datastructures_algorithms.treedatastructures.binarytree;
+package datastructures_algorithms.treedatastructures.binarytree.binarysearchtree;
 
 public class Main {
 

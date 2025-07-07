@@ -1,4 +1,4 @@
-package datastructures_algorithms.tree_data_structures.breadth_first_search;
+package datastructures_algorithms.tree_data_structures.breadthfirstsearch;
 
 import java.util.*;
 

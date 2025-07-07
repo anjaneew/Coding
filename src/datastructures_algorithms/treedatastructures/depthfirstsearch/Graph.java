@@ -1,4 +1,4 @@
-package datastructures_algorithms.tree_data_structures.depthfirstsearch;
+package datastructures_algorithms.treedatastructures.depthfirstsearch;
 
 import java.util.ArrayList;
 
